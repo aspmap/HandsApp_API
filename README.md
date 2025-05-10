@@ -1,5 +1,5 @@
 # HandsApp API
-API для проекта HandsApp
+API для проекта HandsApp (https://github.com/aspmap/HandsApp)
 
 **Старт проекта:** 7 мая 2025 г.
 
