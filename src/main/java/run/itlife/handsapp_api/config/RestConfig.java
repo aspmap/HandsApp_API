@@ -51,7 +51,8 @@ public class RestConfig {
                 .cors(c -> c.configurationSource(request -> {
                     CorsConfiguration cors = new CorsConfiguration();
                     cors.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Origin"));
-                    cors.setAllowedOrigins(Arrays.asList("http://localhost:3000/refresh", "http://localhost:3000/token", "http://localhost:3000", "http://localhost:3000/"));
+                    //cors.setAllowedOrigins(Arrays.asList("http://localhost:3000/refresh", "http://localhost:3000/token", "http://localhost:3000", "http://localhost:3000/"));
+                    cors.setAllowedOrigins(Arrays.asList("http://localhost:8081/refresh", "http://localhost:8081/token", "http://localhost:8081", "http://localhost:8081/"));
                     cors.setAllowedHeaders(Arrays.asList("*"));
                     cors.setAllowedMethods(Arrays.asList("*"));
                     cors.setAllowCredentials(true);

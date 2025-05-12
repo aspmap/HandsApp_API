@@ -2,7 +2,6 @@ package run.itlife.handsapp_api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import run.itlife.handsapp_api.entity.User;
-
 import java.util.Optional;
 
 // Уровень доступа к БД
@@ -12,6 +11,4 @@ import java.util.Optional;
 //автоматически понимает какой запрос нужно сделать.
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username); // Возвращает юзера
-    User findByUsername(User user); // Возвращает юзера
-
 }

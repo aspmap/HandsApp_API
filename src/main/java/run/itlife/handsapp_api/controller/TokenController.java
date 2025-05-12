@@ -8,7 +8,6 @@ import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.time.Instant;
 import java.util.stream.Collectors;
 
@@ -36,5 +35,4 @@ String ttt = "Hello, " + authentication.getName() + "!";
         //return "{ \"accessToken\": \"" + this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue() + "\"}";
         return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }
-
 }

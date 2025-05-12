@@ -8,9 +8,7 @@ import run.itlife.handsapp_api.config.UrlBasedCorsConfigurationProperties;
 @SpringBootApplication
 @EnableConfigurationProperties(UrlBasedCorsConfigurationProperties.class)
 public class JwtLoginApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(JwtLoginApplication.class, args);
     }
-
 }
