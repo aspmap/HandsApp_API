@@ -33,6 +33,16 @@ public class HelloControllerTests {
         this.mvc.perform(get("/")
                         .header("Authorization", "Bearer " + token))
                 .andExpect(content().string("Hello, shurrik77!"));
+    }
+
+    @Test
+    void getPost() throws Exception {
+        MvcResult result = this.mvc.perform(post("/token")
+                        .with(httpBasic("shurrik77", "111")))
+                .andExpect(status().isOk())
+                .andReturn();
+
+        String token = result.getResponse().getContentAsString();
 
         this.mvc.perform(get("/post/1")
                         .header("Authorization", "Bearer " + token))
