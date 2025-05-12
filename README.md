@@ -12,7 +12,8 @@ API для проекта HandsApp (https://github.com/aspmap/HandsApp)
 :white_check_mark: **Что реализовано:**
 1. Получение JWT-токена POST http://localhost:8080/token
 2. Авторизация и аутентификация пользователя с помощью полученного (в п.1) токена GET http://localhost:8080/
-3. Получение всех постов с помощью полученного (в п.1) токена GET http://localhost:8080/posts
+3. Получение поста с помощью полученного (в п.1) токена GET http://localhost:8080/post/{id}
+4. Простые Unit-тесты
 
 :white_check_mark: **Что не реализовано:**
 1. Получение JWT-токена через фронт на ReactJS
