@@ -10,7 +10,7 @@ API для проекта HandsApp (https://github.com/aspmap/HandsApp)
 5. PostgreSQL 12
 
 :white_check_mark: **Что реализовано:**
-1. Получение JWT-токена POST http://localhost:8080/token
+1. Получение JWT-токена POST http://localhost:8081/token
 2. Авторизация и аутентификация пользователя с помощью полученного (в п.1) токена GET http://localhost:8080/
 3. Получение поста с помощью полученного (в п.1) токена GET http://localhost:8080/post/{id}
 4. Простые Unit-тесты 
@@ -24,7 +24,7 @@ API для проекта HandsApp (https://github.com/aspmap/HandsApp)
 
 > Выборка всех постов
 
-GET http://localhost:8080/posts
+GET http://localhost:8081/posts
 
 
 
