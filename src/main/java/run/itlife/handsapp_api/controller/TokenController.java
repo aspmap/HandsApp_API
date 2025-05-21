@@ -18,8 +18,6 @@ public class TokenController {
 
     @PostMapping(value = "/token")
     public String token(Authentication authentication) {
-        //username = SecurityContextHolder.getContext().getAuthentication().getName();
-String ttt = "Hello, " + authentication.getName() + "!";
         Instant now = Instant.now();
         long expiry = 36000L;
         String scope = authentication.getAuthorities().stream()
@@ -32,7 +30,6 @@ String ttt = "Hello, " + authentication.getName() + "!";
                 .subject(authentication.getName())
                 .claim("scope", scope)
                 .build();
-        //return "{ \"accessToken\": \"" + this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue() + "\"}";
         return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }
 }

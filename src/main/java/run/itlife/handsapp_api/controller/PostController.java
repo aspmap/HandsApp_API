@@ -8,23 +8,34 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import run.itlife.handsapp_api.dto.PostDto;
+import run.itlife.handsapp_api.entity.Post;
 import run.itlife.handsapp_api.service.PostService;
 
+import java.util.ArrayList;
+
 @RestController
-public class HelloController {
+public class PostController {
     private final PostService postService;
     @Autowired
-    public HelloController(PostService postService) {
+    public PostController(PostService postService) {
         this.postService = postService;
     }
 
     @GetMapping("/")
-    public String hello(Authentication authentication) {
-        return "Hello, " + authentication.getName() + "!";
+    public ResponseEntity<PostDto> hello(Authentication authentication) {
+        PostDto postDtoMock = new PostDto();
+        postDtoMock.setPostId(1L);
+        postDtoMock.setContent("Content");
+        return new ResponseEntity<>(postDtoMock, HttpStatus.OK);
     }
 
     @GetMapping("/post/{id}")
     public ResponseEntity<PostDto> findById(@PathVariable long id) {
         return new ResponseEntity<>(postService.getAsDto(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/posts")
+    public ResponseEntity<ArrayList<Post>> findPostsByUsername(Authentication authentication) {
+        return new ResponseEntity<>(postService.findPostsByUsername(authentication.getName()), HttpStatus.OK);
     }
 }

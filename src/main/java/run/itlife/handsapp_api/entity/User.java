@@ -49,7 +49,6 @@ public class User implements UserDetails {
         isActive = active;
     }
 
-
     public boolean getIsGoogle() {
         return isGoogle;
     }

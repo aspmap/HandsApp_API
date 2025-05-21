@@ -1,5 +1,6 @@
 package run.itlife.handsapp_api.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -34,6 +35,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 
     public Long getPostId() {

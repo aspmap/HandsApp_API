@@ -7,6 +7,8 @@ import run.itlife.handsapp_api.dto.PostDto;
 import run.itlife.handsapp_api.entity.Post;
 import run.itlife.handsapp_api.repository.PostRepository;
 
+import java.util.ArrayList;
+
 // Уровень обслуживания
 // Класс, реализующий интерфейс, который отвечает за логику создания постов, валидацию, изменение и т.д.
 @Service
@@ -23,6 +25,11 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto getAsDto(long postId) {
         return toDto(postRepository.findById(postId).orElseThrow());
+    }
+
+    @Override
+    public ArrayList<Post> findPostsByUsername(String username) {
+        return postRepository.findPostsByUsername(username);
     }
 
     private PostDto toDto(Post post) {

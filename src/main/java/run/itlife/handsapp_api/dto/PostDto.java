@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 //Каждый объект класса будет соответствовать некоторому посту
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PostDto {
-
     private Long postId;
     private String photo;
     private String extFile;

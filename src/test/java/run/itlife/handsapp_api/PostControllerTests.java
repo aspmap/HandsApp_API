@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import run.itlife.handsapp_api.config.RestConfig;
-import run.itlife.handsapp_api.controller.HelloController;
+import run.itlife.handsapp_api.controller.PostController;
 import run.itlife.handsapp_api.controller.TokenController;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -15,9 +15,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest({HelloController.class, TokenController.class})
+@WebMvcTest({PostController.class, TokenController.class})
 @Import(RestConfig.class)
-public class HelloControllerTests {
+public class PostControllerTests {
     @Autowired
     MockMvc mvc;
 
